@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Inter:wght@200&family=Neonderthaw&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #343f4f;
+}
+
+.wrapper{
+    display: inline-flex;
+}
+
+.wrapper .static-txt{
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li{
+    color: #fc6d6d;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span{
+    position: relative;
+}
+
+.dynamic-txts li span::after{
+    content: '';
+    position: absolute;
+    height: 120%;
+    width: 100%;
+    border-left: 2px solid #fc6d6d;
+    left: 0;
+    animation: typing 1.5s steps(10) infinite;
+    background: #343f4f;
+}
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin:0 -35px 0 35px ;
+    }
+}
+
+
+@media(max-width:760px){
+    html{
+        font-size: 50%;
+    }
+}
